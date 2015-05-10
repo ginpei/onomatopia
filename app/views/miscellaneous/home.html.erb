@@ -1,2 +1,6 @@
-<h1>Miscellaneous#home</h1>
-<p>Find me in app/views/miscellaneous/home.html.erb</p>
+<h1>Onomatopes</h1>
+<ul>
+  <% @onomatopes.each do |onomatope| %>
+    <li><%= link_to onomatope.name, onomatope %></li>
+  <% end %>
+</ul>
