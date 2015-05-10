@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="globalHeader">
+    <a class="globalHeader-logo" href="/"><img src="/logo.png" width="158" height="89" alt="Onomatopia" /></a>
+    <nav class="globalHeader-navigation">
+      <%= link_to 'Upload', new_illustration_path %>
+    </nav>
+  </header>
 
 <%= yield %>
 

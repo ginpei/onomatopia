@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin-top: 150px;
+}
+.globalHeader {
+  background-color: black;
+  height: 30px;
+  line-height: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.globalHeader-logo {
+  float: left;
+  position: relative;
+  top: -10px;
+}
+.globalHeader-navigation {
+  float: right;
+  padding: 0 1em;
+}
+.globalHeader-navigation a {
+  color: #fff;
+  text-decoration: none;
+}
