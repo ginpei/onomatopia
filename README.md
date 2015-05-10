@@ -4,9 +4,13 @@ Watch and share illustrations with onomatope!
 
 ## Models
 
+* Stereotypes
+    * has_many onomatopes
+    * has_a onomatope
 * Onomatope
     * title:string
     * has_many illustrations
+    * belongs_to sterotype
 * User
     * name:string
     * has_many illustrations
