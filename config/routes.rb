@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :onomatopes
+
   root 'miscellaneous#home'
 
   resources :illustrations

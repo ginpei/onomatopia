@@ -1,0 +1,2 @@
+module OnomatopesHelper
+end

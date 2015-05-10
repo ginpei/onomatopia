@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Onomatopes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @onomatopes.each do |onomatope| %>
+      <tr>
+        <td><%= onomatope.name %></td>
+        <td><%= link_to 'Show', onomatope %></td>
+        <td><%= link_to 'Edit', edit_onomatope_path(onomatope) %></td>
+        <td><%= link_to 'Destroy', onomatope, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Onomatope', new_onomatope_path %>
