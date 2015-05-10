@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.illustration-image-block {
+  text-align: center;
+}
 .illustration-image {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   height: auto;
   max-height: 400px;
   max-width: 90%;
