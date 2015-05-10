@@ -64,7 +64,7 @@ class OnomatopesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_onomatope
-      @onomatope = Onomatope.find(params[:id])
+      @onomatope = Onomatope.find_by_name(params[:name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

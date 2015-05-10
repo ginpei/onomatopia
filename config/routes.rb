@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :onomatopes
+  resources :onomatopes, param: :name
 
   root 'miscellaneous#home'
 
