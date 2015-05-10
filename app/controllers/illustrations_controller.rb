@@ -1,5 +1,6 @@
 class IllustrationsController < ApplicationController
   before_action :set_illustration, only: [:show, :edit, :update, :destroy]
+  before_action :get_onomatope_list, only: [:new, :edit, :update]
 
   # GET /illustrations
   # GET /illustrations.json
@@ -69,6 +70,10 @@ class IllustrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def illustration_params
-      params.require(:illustration).permit(:image)
+      params.require(:illustration).permit(:image, :onomatope_id)
+    end
+
+    def get_onomatope_list
+      @onomatope_list = Onomatope.all.map {|o| [o.name, o.id] }
     end
 end

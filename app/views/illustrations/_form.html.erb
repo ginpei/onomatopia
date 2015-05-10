@@ -15,6 +15,10 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+  <div class="field">
+    <%= f.label :onomatope %><br>
+    <%= select :illustration, :onomatope_id, @onomatope_list %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
