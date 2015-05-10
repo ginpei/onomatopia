@@ -4,5 +4,9 @@
   <%= image_tag @illustration.image_url, class: 'illustration-image' %>
 </p>
 
+<p>
+  Onomatope: <%= link_to @illustration.onomatope.name, @illustration.onomatope %>
+</p>
+
 <%= link_to 'Edit', edit_illustration_path(@illustration) %> |
 <%= link_to 'Back', illustrations_path %>

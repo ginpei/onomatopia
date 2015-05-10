@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510172022) do
+ActiveRecord::Schema.define(version: 20150510174208) do
 
   create_table "illustrations", force: :cascade do |t|
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "onomatope_id"
   end
 
   create_table "onomatopes", force: :cascade do |t|
