@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'miscellaneous#home'
+
   resources :illustrations
 
   # The priority is based upon order of creation: first created -> highest priority.
