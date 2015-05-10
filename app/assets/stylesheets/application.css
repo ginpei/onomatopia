@@ -26,11 +26,6 @@ body {
   top: 0;
   width: 100%;
 }
-.globalHeader-logo {
-  float: left;
-  position: relative;
-  top: -10px;
-}
 .globalHeader-navigation {
   float: right;
   padding: 0 1em;
