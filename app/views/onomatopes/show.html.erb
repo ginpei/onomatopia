@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @onomatope.name %>
-</p>
+<h1><%= @onomatope.name %></h1>
 
-<%= link_to 'Edit', edit_onomatope_path(@onomatope) %> |
-<%= link_to 'Back', onomatopes_path %>
+<ul>
+  <% @illustrations.each do |illustration| %>
+    <li><%= render partial: 'illustrations/preview', locals: { illustration: illustration } %></li>
+  <% end %>
+</ul>

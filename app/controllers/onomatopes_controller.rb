@@ -10,6 +10,7 @@ class OnomatopesController < ApplicationController
   # GET /onomatopes/1
   # GET /onomatopes/1.json
   def show
+    @illustrations = @onomatope.illustrations.all
   end
 
   # GET /onomatopes/new
