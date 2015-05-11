@@ -5,13 +5,20 @@
 .home-nav {
   font-size: 0;
   margin: 0 auto;
+  text-align: justify;
   width: 800px;
 
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 100%;
+  }
   &-item {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: solid 3px #666;
+    border: solid 5px #333;
     box-sizing: border-box;
     display: inline-block;
     height: 200px;
@@ -20,9 +27,9 @@
     width: 100%;
   }
   &-item-col2 {
-    width: 50%;
+    width: 49.5%;
   }
   &-item-col3 {
-    width: 33.33333%;
+    width: 33%;
   }
 }
