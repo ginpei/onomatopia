@@ -6,6 +6,10 @@ class Onomatope < ActiveRecord::Base
     write_attribute(:name, s.upcase)
   end
 
+  def top_illustration
+    illustrations.first
+  end
+
   def to_param
     name
   end

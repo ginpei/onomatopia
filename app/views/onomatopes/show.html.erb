@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @onomatope.name %></h1>
+<h1 class="onomatope-title"><%= @onomatope.name %></h1>
 
-<ul>
-  <% @illustrations.each do |illustration| %>
-    <li><%= render partial: 'illustrations/preview', locals: { illustration: illustration } %></li>
-  <% end %>
-</ul>
+<%= render partial: 'illustrations/show', locals: { illustration: @onomatope.top_illustration } %>
