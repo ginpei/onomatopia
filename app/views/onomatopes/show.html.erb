@@ -3,3 +3,9 @@
 <h1 class="onomatope-title"><%= @onomatope.name %></h1>
 
 <%= render partial: 'illustrations/show', locals: { illustration: @onomatope.top_illustration } %>
+
+<h2>解説</h2>
+
+<p><%= @onomatope.top_explanation.outline %></p>
+
+<p><%= @onomatope.top_explanation.description %></p>

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510181113) do
+ActiveRecord::Schema.define(version: 20150511033147) do
+
+  create_table "explanations", force: :cascade do |t|
+    t.integer  "onomatope_id"
+    t.string   "outline"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "explanations", ["onomatope_id"], name: "index_explanations_on_onomatope_id"
 
   create_table "illustrations", force: :cascade do |t|
     t.string   "image"
