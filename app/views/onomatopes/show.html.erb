@@ -9,3 +9,12 @@
 <p><%= @onomatope.top_explanation.outline %></p>
 
 <%= md @onomatope.top_explanation.description %>
+
+<h2>同義語</h2>
+
+<ul>
+  <li><strong><%= @onomatope.name %></strong></li>
+  <% @onomatope.synonyms.each do |synonym| %>
+    <li><%= synonym.name %></li>
+  <% end %>
+</ul>
