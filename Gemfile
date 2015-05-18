@@ -46,3 +46,4 @@ end
 gem 'carrierwave'
 gem 'fog'
 gem 'redcarpet'
+gem 'slim-rails'
