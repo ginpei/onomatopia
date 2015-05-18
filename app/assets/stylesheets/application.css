@@ -43,6 +43,15 @@ body {
   text-decoration: none;
 }
 
+.globalFooter {
+  background-color: #000;
+  border-top: solid 1px #999;
+  color: #ccc;
+  margin-top: 3em;
+  padding: 1em;
+  text-align: center;
+}
+
 @-webkit-keyframes twitch {
     0% { transform: translateX( 0  ) translateY( 0  ); }
    20% { transform: translateX( 2px) translateY( 2px); }
