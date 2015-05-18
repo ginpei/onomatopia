@@ -13,6 +13,7 @@ class MiscellaneousController < ApplicationController
 
   def search
     @keyword = params[:keyword]
+    @synonyms = Onomatope.search(@keyword)
   end
 
   private

@@ -1,4 +1,11 @@
 h1 Search
+
 = render partial: 'miscellaneous/search_form', locals: { keyword: @keyword }
-p
-  Your search keyword is "#{ @keyword }".
+
+- if @synonyms.empty?
+  p Not found.
+- else
+  ul
+    - @synonyms.each do |synonym|
+      li
+        = link_to synonym.name, onomatope_path(synonym.onomatope)

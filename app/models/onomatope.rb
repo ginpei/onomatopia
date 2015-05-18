@@ -13,6 +13,10 @@ class Onomatope < ActiveRecord::Base
     end
   end
 
+  def self.search(keyword)
+    Synonym.where('name like ?', "%#{keyword.upcase}%")
+  end
+
   def top_synonym
     Synonym.find(top_synonym_id)
   end
