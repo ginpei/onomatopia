@@ -6,9 +6,12 @@
 
 <h2>解説</h2>
 
-<p><%= @onomatope.top_explanation.outline %></p>
-
-<%= md @onomatope.top_explanation.description %>
+<% if @onomatope.top_explanation.nil? %>
+  <p>(No data.)</p>
+<% else %>
+  <p><%= @onomatope.top_explanation.outline %></p>
+  <%= md @onomatope.top_explanation.description %>
+<% end %>
 
 <h2>同義語</h2>
 
