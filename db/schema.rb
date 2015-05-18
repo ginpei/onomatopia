@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511040812) do
+ActiveRecord::Schema.define(version: 20150518045957) do
 
   create_table "explanations", force: :cascade do |t|
     t.integer  "onomatope_id"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20150511040812) do
   end
 
   create_table "onomatopes", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "top_synonym_id", null: false
   end
 
   create_table "synonyms", force: :cascade do |t|
