@@ -11,6 +11,10 @@ class MiscellaneousController < ApplicationController
     @onomatopes = Onomatope.all
   end
 
+  def search
+    @keyword = params[:keyword]
+  end
+
   private
     def get_top_onomatopes_list_item(span, name)
       onomatope = Onomatope.find_by_name(name)

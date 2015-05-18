@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search', to: 'miscellaneous#search'
   resources :onomatopes, param: :name
 
   root 'miscellaneous#home'
