@@ -11,8 +11,8 @@
 <%= render partial: 'miscellaneous/search_form' %>
 
 <nav class="home-nav">
-  <% @top_onomatopes.each do |data| %>
-    <a class="home-nav-item <%= "home-nav-item-col#{data[:span]}" %>" style="background-image: url('<%= data[:illustration].image_url %>')" href="<%= onomatope_path data[:onomatope] %>"></a>
+  <% @top_onomatopoeias.each do |data| %>
+    <a class="home-nav-item <%= "home-nav-item-col#{data[:span]}" %>" style="background-image: url('<%= data[:illustration].image_url %>')" href="<%= onomatopoeia_path data[:onomatopoeia] %>"></a>
   <% end %>
 </nav>
 

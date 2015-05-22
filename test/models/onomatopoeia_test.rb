@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OnomatopeTest < ActiveSupport::TestCase
+class OnomatopoeiaTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

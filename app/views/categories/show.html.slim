@@ -3,11 +3,11 @@ p#notice = notice
 h1
   = @category.name
 
-img class="category-topImage" src="#{@category.onomatope.top_illustration.image_url}"
+img class="category-topImage" src="#{@category.onomatopoeia.top_illustration.image_url}"
 
 ul class="category-list"
-  - @category.onomatopes.each do |onomatope|
-    - onomatope.synonyms.each do |synonym|
+  - @category.onomatopoeias.each do |onomatopoeia|
+    - onomatopoeia.synonyms.each do |synonym|
       li class="category-list-item"
-        a class="category-link" href="#{onomatope_path onomatope}"
+        a class="category-link" href="#{onomatopoeia_path onomatopoeia}"
           = synonym.name

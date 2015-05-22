@@ -1,3 +1,3 @@
 class Explanation < ActiveRecord::Base
-  belongs_to :onomatope
+  belongs_to :onomatopoeia
 end

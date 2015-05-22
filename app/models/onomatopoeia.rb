@@ -1,4 +1,4 @@
-class Onomatope < ActiveRecord::Base
+class Onomatopoeia < ActiveRecord::Base
   belongs_to :category
   has_many :illustrations
   has_many :explanations
@@ -7,7 +7,7 @@ class Onomatope < ActiveRecord::Base
   def self.find_by_name(name)
     synonym = Synonym.find_by_name(name)
     if synonym
-      synonym.onomatope
+      synonym.onomatopoeia
     else
       nil
     end

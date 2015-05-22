@@ -1,13 +1,13 @@
 # Onomatopia
 
-Watch and share illustrations with onomatope!
+Watch and share illustrations with onomatopoeia!
 
 ## Models
 
 * Stereotypes
-    * has_many onomatopes
-    * has_a onomatope
-* Onomatope
+    * has_many onomatopoeias
+    * has_a onomatopoeia
+* Onomatopoeia
     * title:string
     * has_many illustrations
     * belongs_to sterotype
@@ -20,4 +20,4 @@ Watch and share illustrations with onomatope!
     * uid:string
     * belongs_to user
 * Illustrations
-    * belongs_to onomatope, user
+    * belongs_to onomatopoeia, user

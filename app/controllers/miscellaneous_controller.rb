@@ -6,20 +6,20 @@ class MiscellaneousController < ApplicationController
   def home
     @categories = Category.all
 
-    @top_onomatopes = []
-    @top_onomatopes.push(get_top_onomatopes_list_item(1, 'KABOOM'))
-    @top_onomatopes.push(get_top_onomatopes_list_item(2, 'THUMP'))
-    @top_onomatopes.push(get_top_onomatopes_list_item(2, 'CHEER'))
-    @top_onomatopes.push(get_top_onomatopes_list_item(3, 'SOB'))
-    @top_onomatopes.push(get_top_onomatopes_list_item(3, 'CRASH'))
-    @top_onomatopes.push(get_top_onomatopes_list_item(3, 'WOOF'))
+    @top_onomatopoeias = []
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(1, 'KABOOM'))
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(2, 'THUMP'))
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(2, 'CHEER'))
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'SOB'))
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'CRASH'))
+    @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'WOOF'))
 
-    @onomatopes = Onomatope.all
+    @onomatopoeias = Onomatopoeia.all
   end
 
   def search
     @keyword = params[:keyword]
-    @synonyms = Onomatope.search(@keyword)
+    @synonyms = Onomatopoeia.search(@keyword)
   end
 
   def change_locale
@@ -34,9 +34,9 @@ class MiscellaneousController < ApplicationController
   end
 
   private
-    def get_top_onomatopes_list_item(span, name)
-      onomatope = Onomatope.find_by_name(name)
-      illustration = onomatope.illustrations.first
-      { span: span, onomatope: onomatope, illustration: illustration }
+    def get_top_onomatopoeias_list_item(span, name)
+      onomatopoeia = Onomatopoeia.find_by_name(name)
+      illustration = onomatopoeia.illustrations.first
+      { span: span, onomatopoeia: onomatopoeia, illustration: illustration }
     end
 end

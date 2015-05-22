@@ -1,10 +1,10 @@
-<%= form_for(@onomatope) do |f| %>
-  <% if @onomatope.errors.any? %>
+<%= form_for(@onomatopoeia) do |f| %>
+  <% if @onomatopoeia.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@onomatope.errors.count, "error") %> prohibited this onomatope from being saved:</h2>
+      <h2><%= pluralize(@onomatopoeia.errors.count, "error") %> prohibited this onomatopoeia from being saved:</h2>
 
       <ul>
-      <% @onomatope.errors.full_messages.each do |message| %>
+      <% @onomatopoeia.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

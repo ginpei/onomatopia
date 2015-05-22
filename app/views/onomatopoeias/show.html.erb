@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="onomatopoeia-title"><%= @onomatopoeia.name %></h1>
+
+<%= render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration } %>
+
+<h2>解説</h2>
+
+<% if @onomatopoeia.top_explanation.nil? %>
+  <p>(No data.)</p>
+<% else %>
+  <p><%= @onomatopoeia.top_explanation.outline %></p>
+  <%= md @onomatopoeia.top_explanation.description %>
+<% end %>
+
+<h2>同義語</h2>
+
+<ul>
+  <li><strong><%= @onomatopoeia.name %></strong></li>
+  <% @onomatopoeia.synonyms.each do |synonym| %>
+    <% unless synonym.name == @onomatopoeia.name %>
+      <li><%= synonym.name %></li>
+    <% end %>
+  <% end %>
+</ul>

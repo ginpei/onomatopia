@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  onomatope_id: 
+  onomatopoeia_id: 
   outline: MyString
   description: MyText
 
 two:
-  onomatope_id: 
+  onomatopoeia_id: 
   outline: MyString
   description: MyText
