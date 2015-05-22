@@ -1,5 +1,4 @@
 class Onomatope < ActiveRecord::Base
-  validates :name, :presence => true
   has_many :illustrations
   has_many :explanations
   has_many :synonyms
