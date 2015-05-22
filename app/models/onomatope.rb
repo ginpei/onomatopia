@@ -1,4 +1,5 @@
 class Onomatope < ActiveRecord::Base
+  belongs_to :category
   has_many :illustrations
   has_many :explanations
   has_many :synonyms

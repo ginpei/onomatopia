@@ -4,6 +4,8 @@ class MiscellaneousController < ApplicationController
   end
 
   def home
+    @categories = Category.all
+
     @top_onomatopes = []
     @top_onomatopes.push(get_top_onomatopes_list_item(1, 'KABOOM'))
     @top_onomatopes.push(get_top_onomatopes_list_item(2, 'THUMP'))
