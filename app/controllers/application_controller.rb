@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :set_locale
+
   helper_method :with_global_header
   helper_method :with_global_footer
   helper_method :md
@@ -25,4 +27,13 @@ class ApplicationController < ActionController::Base
     end
     @md_renderer.render(html).html_safe
   end
+
+  private
+    def set_locale
+      I18n.locale = current_locale
+    end
+
+    def current_locale
+      @current_locale ||= session[:locale] || I18n.default_locale
+    end
 end

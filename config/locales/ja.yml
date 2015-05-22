@@ -1,0 +1,19 @@
+ja:
+  g:
+    send: 送信
+
+  home:
+    header:
+      description: |
+        マンガ世代へおくる  
+        日英「オノマトペ＝擬音語・擬態語」辞書
+    translation:
+      ja: 日本語
+      en: 英語
+    footer:
+      link:
+        about: オノマトピアについて
+        term: 利用規約
+        staf_page: スタッフのページ
+        opinion_form: ご意見フォーム
+        opinion_form_description: ご意見、ご感想、掲載希望オノマトペなどありましたら、ご協力くださいませ。
