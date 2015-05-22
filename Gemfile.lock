@@ -41,7 +41,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (4.0.5)
+    byebug (5.0.0)
       columnize (= 0.9.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -88,7 +88,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.1.2)
+    fog-aws (0.3.0)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -138,7 +138,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (0.4.5)
+    fog-softlayer (0.4.6)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -162,7 +162,7 @@ GEM
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
-    jbuilder (2.2.13)
+    jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -234,9 +234,9 @@ GEM
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
     spring (1.3.6)
-    sprockets (3.0.3)
+    sprockets (3.1.0)
       rack (~> 1.0)
-    sprockets-rails (2.3.0)
+    sprockets-rails (2.3.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
