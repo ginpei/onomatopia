@@ -1,3 +1,33 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.category {
+  &-topImage {
+    width: 100%;
+  }
+
+  &-list {
+    border-top: solid 1px #ccc;
+    list-style-type: none;
+    margin-bottom: 2em;
+    padding: 0;
+
+    &-item {
+      &:nth-child(odd) {
+        background-color: #fff;
+      }
+      &:nth-child(even) {
+        background-color: #eee;
+      }
+    }
+  }
+
+  &-link {
+    border-bottom: solid 1px #ccc;
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+
+    &::after {
+      content: ">";
+      float: right;
+    }
+  }
+}

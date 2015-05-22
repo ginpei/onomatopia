@@ -1,12 +1,13 @@
 p#notice = notice
 
-p
-  strong Name:
+h1
   = @category.name
-p
-  strong Onomatope:
-  = @category.onomatope
 
-= link_to 'Edit', edit_category_path(@category)
-'|
-= link_to 'Back', categories_path
+img class="category-topImage" src="#{@category.onomatope.top_illustration.image_url}"
+
+ul class="category-list"
+  - @category.onomatopes.each do |onomatope|
+    - onomatope.synonyms.each do |synonym|
+      li class="category-list-item"
+        a class="category-link" href="#{onomatope_path onomatope}"
+          = synonym.name
