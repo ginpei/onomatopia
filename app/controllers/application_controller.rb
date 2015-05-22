@@ -3,7 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :with_global_header
+  helper_method :with_global_footer
   helper_method :md
+
+  def with_global_header
+    true
+  end
+
+  def with_global_footer
+    true
+  end
 
   def md(html)
     unless @md_renderer

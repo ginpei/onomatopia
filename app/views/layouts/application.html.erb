@@ -9,17 +9,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="globalHeader">
-    <a class="globalHeader-logo" href="/"><img src="/logo.png" width="106" height="60" alt="Onomatopia" /></a>
-    <nav class="globalHeader-navigation">
-      <%= link_to 'Upload', new_illustration_path %>
-    </nav>
-  </header>
+  <% if with_global_header %>
+    <header class="globalHeader">
+      <a class="globalHeader-logo" href="/"><img src="/logo.png" width="106" height="60" alt="Onomatopia" /></a>
+      <nav class="globalHeader-navigation">
+        <%= link_to 'Upload', new_illustration_path %>
+      </nav>
+    </header>
+  <% end %>
 
 <%= yield %>
 
-  <footer class="globalFooter">
-    &copy; Q, &copy; Qinpei and &copy; Qaki
-  </footer>
+  <% if with_global_footer %>
+    <footer class="globalFooter">
+      &copy; Q, &copy; Qinpei and &copy; Qaki
+    </footer>
+  <% end %>
 </body>
 </html>

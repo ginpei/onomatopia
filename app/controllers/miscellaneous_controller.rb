@@ -1,4 +1,8 @@
 class MiscellaneousController < ApplicationController
+  def with_global_header
+    false
+  end
+
   def home
     @top_onomatopes = []
     @top_onomatopes.push(get_top_onomatopes_list_item(1, 'KABOOM'))
