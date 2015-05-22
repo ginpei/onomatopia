@@ -58,31 +58,31 @@ create_onomatopoeia(
 )
 create_onomatopoeia(
   name: 'THUMP',
-  outline: 'Sitting down.',
   category: 'Object',
+  outline: 'Sitting down.',
   description: 'What!? From a standing position! Such jumping power in his knees alone!'
 )
 create_onomatopoeia(
   name: 'CHEER',
-  outline: 'Happy.',
   category: 'Emotion',
+  outline: 'Happy.',
   description: 'Ha-ha-ha.'
 )
 create_onomatopoeia(
   name: 'SOB',
-  outline: 'Sad.',
   category: 'Emotion',
+  outline: 'Sad.',
   description: 'Sick sick...'
 )
 create_onomatopoeia(
   name: 'CRASH',
-  outline: 'Something is broken.',
   category: 'Object',
+  outline: 'Something is broken.',
   description: 'Broken heart.'
 )
 create_onomatopoeia(
   name: 'WOOF',
-  outline: 'By doggie.',
   category: 'Animal',
+  outline: 'By doggie.',
   description: 'Woof! Bow wow! Wang wang!'
 )
