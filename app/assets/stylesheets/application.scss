@@ -14,17 +14,21 @@
  *= require_self
  */
 
+html {
+  background-color: #fff;
+}
 body {
-  margin-top: 60px;
+  background-color: #ff0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  width: 320px;
 }
 
 .globalHeader {
   background-color: black;
   height: 30px;
   line-height: 30px;
-  left: 0;
-  position: absolute;
-  top: 0;
+  margin-bottom: 40px;
   width: 100%;
 
   &-logo {
