@@ -13,6 +13,9 @@ def create_onomatope(data)
   end
 
   onomatope = category.onomatopes.create
+  if category.onomatope.nil?
+    category.update(onomatope: onomatope)
+  end
 
   synonym = onomatope.synonyms.create(
     name: data[:name])
