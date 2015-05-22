@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
 
   private
     def set_locale
+      I18n.available_locales = %i(en ja)
       I18n.locale = current_locale
     end
 

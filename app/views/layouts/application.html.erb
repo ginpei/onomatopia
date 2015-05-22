@@ -22,6 +22,10 @@
 
   <% if with_global_footer %>
     <footer class="globalFooter">
+      <%= form_tag change_locale_path do %>
+        <%= button_tag '日本語', name: :locale, value: :ja %>
+        <%= button_tag 'English', name: :locale, value: :en %>
+      <% end %>
       &copy; Q, &copy; Qinpei and &copy; Qaki
     </footer>
   <% end %>

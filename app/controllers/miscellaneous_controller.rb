@@ -20,6 +20,17 @@ class MiscellaneousController < ApplicationController
     @synonyms = Onomatope.search(@keyword)
   end
 
+  def change_locale
+    locale = params[:locale]
+    unless locale.to_sym.presence_in I18n.available_locales
+      fail 'Unavailable locale'
+    end
+
+    session[:locale] = locale
+
+    redirect_to request.referrer
+  end
+
   private
     def get_top_onomatopes_list_item(span, name)
       onomatope = Onomatope.find_by_name(name)
