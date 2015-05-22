@@ -71,6 +71,31 @@
     }
   }
 
+  &-allOnomatopes {
+    &-list {
+      padding: 0;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 0;
+        width: 100%;
+      }
+    }
+    &-item,
+    &-item:visited {
+      background-color: #000;
+      border: solid 1px #990;
+      box-sizing: border-box;
+      color: #fff;
+      display: inline-block;
+      float: left;
+      padding: 16px;
+      text-decoration: none;
+      width: 50%;
+    }
+  }
+
   &-footer {
     background-color: #fff;
 

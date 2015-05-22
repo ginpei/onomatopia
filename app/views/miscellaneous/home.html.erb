@@ -17,12 +17,15 @@
     <a class="home-nav-item <%= "home-nav-item-col#{data[:span]}" %>" style="background-image: url('<%= data[:illustration].image_url %>')" href="<%= onomatope_path data[:onomatope] %>"></a>
   <% end %>
 </nav>
-<h1>All Onomatopes</h1>
-<ul>
-  <% @onomatopes.each do |onomatope| %>
-    <li><%= link_to onomatope.name, onomatope %></li>
-  <% end %>
-</ul>
+
+<section class="home-allOnomatopes">
+  <h1 class="home-allOnomatopes-title">All Onomatopes</h1>
+  <nav class="home-allOnomatopes-list">
+    <% @onomatopes.each do |onomatope| %>
+      <%= link_to onomatope.name, onomatope, class: 'home-allOnomatopes-item' %>
+    <% end %>
+  </nav>
+</section>
 
 <footer class="home-footer">
   <div class="home-footer-link-list">
