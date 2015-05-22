@@ -2,7 +2,11 @@
 
 <h1 class="onomatopoeia-title"><%= @onomatopoeia.name %></h1>
 
-<%= render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration } %>
+<% unless @onomatopoeia.top_illustration.nil? %>
+  <%= render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration } %>
+<% else %>
+  (No images.)
+<% end %>
 
 <h2>解説</h2>
 

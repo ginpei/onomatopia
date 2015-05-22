@@ -3,7 +3,8 @@ p#notice = notice
 h1
   = @category.name
 
-img class="category-topImage" src="#{@category.onomatopoeia.top_illustration.image_url}"
+- unless @category.onomatopoeia.top_illustration.nil?
+  img class="category-topImage" src="#{@category.onomatopoeia.top_illustration.image_url}"
 
 ul class="category-list"
   - @category.onomatopoeias.each do |onomatopoeia|
