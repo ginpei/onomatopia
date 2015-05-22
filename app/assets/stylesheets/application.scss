@@ -17,6 +17,7 @@
 body {
   margin-top: 60px;
 }
+
 .globalHeader {
   background-color: black;
   height: 30px;
@@ -25,22 +26,24 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-}
-.globalHeader-logo {
-  display: inline-block;
-}
-.globalHeader-logo:hover {
-  -webkit-animation: twitch 200ms;
-  animation: twitch 200ms;
-  background-color: transparent;
-}
-.globalHeader-navigation {
-  float: right;
-  padding: 0 1em;
-}
-.globalHeader-navigation a {
-  color: #fff;
-  text-decoration: none;
+
+  &-logo {
+    display: inline-block;
+  }
+  &-logo:hover {
+    -webkit-animation: twitch 200ms;
+    animation: twitch 200ms;
+    background-color: transparent;
+  }
+  &-navigation {
+    float: right;
+    padding: 0 1em;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 }
 
 .globalFooter {
