@@ -13,6 +13,12 @@ def create_onomatope(data)
     name: data[:name])
   onomatope.update(top_synonym_id: synonym.id)
 
+  p data[:name]
+  unless data[:synonyms].nil?
+    p data[:synonyms]
+    data[:synonyms].each{|name|onomatope.synonyms.create!(name: name)}
+  end
+
   illustration = onomatope.illustrations.create(
     image: seed_image(data[:name]))
 
@@ -27,6 +33,7 @@ end
 
 create_onomatope(
   name: 'KABOOM',
+  synonyms: ['BOOM'],
   outline: 'Explosion.',
   description: 'Explosion. Explosion. **Explosion**. Explosion. Explosion.'
 )
