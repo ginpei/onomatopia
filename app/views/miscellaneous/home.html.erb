@@ -16,11 +16,11 @@
   <% end %>
 </nav>
 
-<section class="home-allOnomatopes">
-  <h1 class="home-allOnomatopes-title">All Categories</h1>
-  <nav class="home-allOnomatopes-list">
+<section class="home-allCategories">
+  <h1 class="home-allCategories-title">All Categories</h1>
+  <nav class="home-allCategories-list">
     <% @categories.each do |category| %>
-      <%= link_to category.name, category, class: 'home-allOnomatopes-item' %>
+      <%= link_to category.name, category, class: 'home-allCategories-item' %>
     <% end %>
   </nav>
 </section>
