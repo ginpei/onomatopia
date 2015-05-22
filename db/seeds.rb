@@ -27,8 +27,11 @@ def create_onomatopoeia(data)
     data[:synonyms].each{|name|onomatopoeia.synonyms.create!(name: name)}
   end
 
-  illustration = onomatopoeia.illustrations.create(
-    image: seed_image(data[:name]))
+  image = seed_image(data[:name])
+  if image
+    illustration = onomatopoeia.illustrations.create(
+      image: image)
+  end
 
   explanation = onomatopoeia.explanations.create(
     outline: data[:outline],
@@ -36,7 +39,12 @@ def create_onomatopoeia(data)
 end
 
 def seed_image(name)
-  File.open(File.join(Rails.root, "/db/seed_images/#{name}.png"))
+  path = File.join(Rails.root, "/db/seed_images/#{name}.png")
+  if File.exist? path
+    File.open(path)
+  else
+    nil
+  end
 end
 
 # categories:
@@ -57,10 +65,46 @@ create_onomatopoeia(
   description: 'Explosion. Explosion. **Explosion**. Explosion. Explosion.'
 )
 create_onomatopoeia(
+  name: 'NOM NOM',
+  category: 'Living',
+  outline: 'Yummy.',
+  description: 'For here or to go?'
+)
+create_onomatopoeia(
+  name: 'WOOF',
+  category: 'Animal',
+  outline: 'By doggie.',
+  description: 'Woof! Bow wow! Wang wang!'
+)
+create_onomatopoeia(
+  name: 'FLAP',
+  category: 'Action',
+  outline: 'Walking.',
+  description: 'Batako-san.'
+)
+create_onomatopoeia(
+  name: 'APPLAUSE',
+  category: 'Atomoshphere',
+  outline: 'Awesome!',
+  description: 'You are wonderful!'
+)
+create_onomatopoeia(
+  name: 'BLINK',
+  category: 'Looks',
+  outline: 'On and off.',
+  description: 'Signal.'
+)
+create_onomatopoeia(
   name: 'THUMP',
   category: 'Object',
   outline: 'Sitting down.',
   description: 'What!? From a standing position! Such jumping power in his knees alone!'
+)
+create_onomatopoeia(
+  name: 'CRASH',
+  category: 'Object',
+  outline: 'Something is broken.',
+  description: 'Broken heart.'
 )
 create_onomatopoeia(
   name: 'CHEER',
@@ -73,16 +117,4 @@ create_onomatopoeia(
   category: 'Emotion',
   outline: 'Sad.',
   description: 'Sick sick...'
-)
-create_onomatopoeia(
-  name: 'CRASH',
-  category: 'Object',
-  outline: 'Something is broken.',
-  description: 'Broken heart.'
-)
-create_onomatopoeia(
-  name: 'WOOF',
-  category: 'Animal',
-  outline: 'By doggie.',
-  description: 'Woof! Bow wow! Wang wang!'
 )
