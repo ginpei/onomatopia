@@ -18,6 +18,8 @@
 <ul>
   <li><strong><%= @onomatope.name %></strong></li>
   <% @onomatope.synonyms.each do |synonym| %>
-    <li><%= synonym.name %></li>
+    <% unless synonym.name == @onomatope.name %>
+      <li><%= synonym.name %></li>
+    <% end %>
   <% end %>
 </ul>
