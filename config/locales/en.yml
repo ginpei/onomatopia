@@ -1,6 +1,9 @@
 en:
   g:
     send: Send
+    lang:
+      ja: Japanese
+      en: English
 
   home:
     header:
