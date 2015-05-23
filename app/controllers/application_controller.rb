@@ -28,22 +28,22 @@ class ApplicationController < ActionController::Base
     @md_renderer.render(html).html_safe
   end
 
+  def current_locale
+    unless @current_locale
+      locale = session[:locale] || request.env['HTTP_ACCEPT_LANGUAGE'][0..1] || I18n.default_locale
+      if locale.to_sym.presence_in I18n.available_locales
+        @current_locale = locale
+      else
+        @current_locale = I18n.default_locale
+      end
+
+      session[:locale] = locale
+    end
+    @current_locale
+  end
+
   private
     def set_locale
       I18n.locale = current_locale
-    end
-
-    def current_locale
-      unless @current_locale
-        locale = session[:locale] || request.env['HTTP_ACCEPT_LANGUAGE'][0..1] || I18n.default_locale
-        if locale.to_sym.presence_in I18n.available_locales
-          @current_locale = locale
-        else
-          @current_locale = I18n.default_locale
-        end
-
-        session[:locale] = locale
-      end
-      @current_locale
     end
 end
