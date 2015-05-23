@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if with_global_header %>
+  <% if @with_global_header %>
     <header class="globalHeader">
       <a class="globalHeader-logo" href="/"><img src="/logo.png" width="106" height="60" alt="Onomatopia" /></a>
       <nav class="globalHeader-navigation">
@@ -20,7 +20,7 @@
 
 <%= yield %>
 
-  <% if with_global_footer %>
+  <% if @with_global_footer %>
     <footer class="globalFooter">
       <%= form_tag change_locale_path do %>
         <%= button_tag '日本語', name: :locale, value: :ja %>

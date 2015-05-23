@@ -4,18 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
+  before_action :set_layout_config
 
   helper_method :with_global_header
   helper_method :with_global_footer
   helper_method :md
-
-  def with_global_header
-    true
-  end
-
-  def with_global_footer
-    true
-  end
 
   def md(html)
     unless @md_renderer
@@ -45,5 +38,10 @@ class ApplicationController < ActionController::Base
   private
     def set_locale
       I18n.locale = current_locale
+    end
+
+    def set_layout_config
+      @with_global_header = true
+      @with_global_footer = true
     end
 end

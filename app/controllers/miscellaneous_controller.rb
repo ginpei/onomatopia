@@ -4,6 +4,8 @@ class MiscellaneousController < ApplicationController
   end
 
   def home
+    @with_global_header = false
+
     @categories = Category.all
 
     @top_onomatopoeias = []
