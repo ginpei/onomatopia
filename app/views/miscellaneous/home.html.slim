@@ -4,13 +4,9 @@ header.home-header
 
 form class="home-translation" action="#"
   button class="home-translation-item" name="type" value="jaen" disabled="disabled"
-    = t 'g.lang.ja'
-    ' →
-    = t 'g.lang.en'
+    ' #{t 'g.lang.ja'}→#{t 'g.lang.en'}
   button class="home-translation-item" name="type" value="enja"
-    = t 'g.lang.en'
-    ' →
-    = t 'g.lang.ja'
+    ' #{t 'g.lang.en'}→#{t 'g.lang.ja'}
 
 = render partial: 'miscellaneous/search_form'
 
