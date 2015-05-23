@@ -1,14 +1,15 @@
 h1 Search
 
-= render partial: 'miscellaneous/search_form', locals: { keyword: @keyword }
+= render layout: 'miscellaneous/translation_area' do
+  = render partial: 'miscellaneous/search_form', locals: { keyword: @keyword }
 
-- if @synonyms.nil?
-  p Input keyword.
-- else
-  - if @synonyms.empty?
-    p Not found.
+  - if @synonyms.nil?
+    p Input keyword.
   - else
-    ul
-      - @synonyms.each do |synonym|
-        li
-          = link_to synonym.name, onomatopoeia_path(synonym.onomatopoeia)
+    - if @synonyms.empty?
+      p Not found.
+    - else
+      ul
+        - @synonyms.each do |synonym|
+          li
+            = link_to synonym.name, onomatopoeia_path(synonym.onomatopoeia)
