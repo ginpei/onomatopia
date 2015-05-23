@@ -30,6 +30,11 @@ body {
 
   &-logo {
     display: inline-block;
+
+    &-image {
+      height: 40px;
+      width: auto;
+    }
   }
   &-logo:hover {
     -webkit-animation: twitch 200ms;

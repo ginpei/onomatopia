@@ -11,9 +11,9 @@
 <body>
   <% if @with_global_header %>
     <header class="globalHeader">
-      <a class="globalHeader-logo" href="/"><img src="/logo.png" width="106" height="60" alt="Onomatopia" /></a>
+      <a class="globalHeader-logo" href="/"><img class="globalHeader-logo-image"src="/logo.png" alt="Onomatopia" /></a>
       <nav class="globalHeader-navigation">
-        <%= link_to 'Search', search_path %>
+        <%= link_to '&#128269;'.html_safe, search_path %>
       </nav>
     </header>
   <% end %>
