@@ -1,0 +1,27 @@
+p#notice
+  = notice
+
+h1.onomatopoeia-title
+  = @onomatopoeia.name
+
+- unless @onomatopoeia.top_illustration.nil?
+  = render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration }
+- else
+  ' (No images.)
+
+h2 解説
+
+- if @onomatopoeia.top_explanation.nil?
+  p (No data.)
+- else
+  p = @onomatopoeia.top_explanation.outline
+  = md @onomatopoeia.top_explanation.description
+
+h2 同義語
+
+ul
+  li
+    strong = @onomatopoeia.name
+  - @onomatopoeia.synonyms.each do |synonym|
+    - unless synonym.name == @onomatopoeia.name
+      li = synonym.name
