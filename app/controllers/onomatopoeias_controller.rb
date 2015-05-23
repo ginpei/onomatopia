@@ -1,5 +1,6 @@
 class OnomatopoeiasController < ApplicationController
   before_action :set_onomatopoeia, only: [:show, :edit, :update, :destroy]
+  before_action :set_page_title, only: [:show, :edit]
 
   # GET /onomatopoeias
   # GET /onomatopoeias.json
@@ -71,5 +72,9 @@ class OnomatopoeiasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def onomatopoeia_params
       params.require(:onomatopoeia).permit(:name)
+    end
+
+    def set_page_title
+      @page_title = @onomatopoeia.name
     end
 end

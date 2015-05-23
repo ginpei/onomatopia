@@ -21,6 +21,11 @@ class MiscellaneousController < ApplicationController
 
   def search
     @keyword = params[:keyword]
+    if @keyword.nil? or @keyword.empty?
+      @page_title = 'Search'
+    else
+      @page_title = "Search for #{@keyword}"
+    end
     @synonyms = Onomatopoeia.search(@keyword)
   end
 

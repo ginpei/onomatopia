@@ -6,7 +6,17 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_layout_config
 
+  helper_method :page_title
   helper_method :md
+
+  def page_title
+    app_name = 'Onomatopia'
+    if @page_title
+      "#{@page_title} - #{app_name}"
+    else
+      "#{app_name} : #{t 'g.title_description'}"
+    end
+  end
 
   def md(html)
     unless @md_renderer
