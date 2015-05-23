@@ -3,13 +3,13 @@ CarrierWave.configure do |config|
     config.storage = :fog
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: Rails.application.secrets.aws_access_key_id,
-      aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-      region: Rails.application.secrets.awd_region
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+      region: ENV['AWS_REGION']
     }
   else
     config.storage = :file
   end
 
-  config.fog_directory = Rails.application.secrets.awd_directory
+  config.fog_directory = ENV['AWS_DIRECTORY']
 end
