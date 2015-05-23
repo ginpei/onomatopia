@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_layout_config
 
-  helper_method :with_global_header
-  helper_method :with_global_footer
   helper_method :md
 
   def md(html)
