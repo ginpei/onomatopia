@@ -1,0 +1,41 @@
+header.home-header
+  = md t 'home.header.description'
+  img class="home-header-logo" src="/logo.png" alt="Onomatopia"
+
+form class="home-translation" action="#"
+  button class="home-translation-item" name="type" value="jaen" disabled="disabled"
+    = t 'home.translation.ja'
+    ' →
+    = t 'home.translation.en'
+  button class="home-translation-item" name="type" value="enja"
+    = t 'home.translation.en'
+    ' →
+    = t 'home.translation.ja'
+
+= render partial: 'miscellaneous/search_form'
+
+nav class="home-nav"
+  - @top_onomatopoeias.each do |data|
+    a class="home-nav-item home-nav-item-col#{data[:span]}" style="background-image: url('#{data[:illustration].image_url}')" href="#{onomatopoeia_path data[:onomatopoeia]}"
+
+section class="home-allCategories"
+  h1 class="home-allCategories-title" All Categories
+  nav class="home-allCategories-list"
+    - @categories.each do |category|
+      a class="home-allCategories-item" href="#{category_path category}"
+        = category.name
+
+footer class="home-footer"
+  div class="home-footer-link-list"
+    a class="home-footer-link-item" href="#"
+      = t 'home.footer.link.about'
+    a class="home-footer-link-item" href="#"
+      = t 'home.footer.link.term'
+    a class="home-footer-link-item" href="#"
+      = t 'home.footer.link.staf_page'
+  form class="home-footer-opinion" action="#"
+    h2
+      = t 'home.footer.link.opinion_form'
+    textarea class="home-footer-opinion-comment" name="comment" placeholder="#{t 'home.footer.link.opinion_form_description'}"
+    button class="home-footer-opinion-submit"
+      = t 'g.send'
