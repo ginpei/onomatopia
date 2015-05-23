@@ -14,7 +14,11 @@ class Onomatopoeia < ActiveRecord::Base
   end
 
   def self.search(keyword)
-    Synonym.where('name like ?', "%#{keyword.upcase}%")
+    if keyword and keyword.present?
+      Synonym.where('name like ?', "%#{keyword.upcase}%")
+    else
+      nil
+    end
   end
 
   def top_synonym
