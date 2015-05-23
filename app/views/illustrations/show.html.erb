@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  Onomatopoeia: <%= link_to @illustration.onomatopoeia.name, @illustration.onomatopoeia %>
+  Onomatopoeia: <%= link_to @illustration.onomatopoeia.name, onomatopoeia_path(@illustration.onomatopoeia) %>
 </p>
 
 <%= link_to 'Edit', edit_illustration_path(@illustration) %> |

@@ -14,9 +14,9 @@
     <% @onomatopoeias.each do |onomatopoeia| %>
       <tr>
         <td><%= onomatopoeia.name %></td>
-        <td><%= link_to 'Show', onomatopoeia %></td>
+        <td><%= link_to 'Show', onomatopoeia_path(onomatopoeia) %></td>
         <td><%= link_to 'Edit', edit_onomatopoeia_path(onomatopoeia) %></td>
-        <td><%= link_to 'Destroy', onomatopoeia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', onomatopoeia_path(onomatopoeia), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
