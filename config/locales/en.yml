@@ -20,3 +20,8 @@ en:
         staf_page: Staf Page
         opinion_form: Your Opinion
         opinion_form_description: Feel free to send your message!
+
+  onomatopoeia:
+    synonyms: Synonyms
+    usage: Usage
+    example_sound: Example Sound

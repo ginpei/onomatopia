@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.onomatopoeia-title {
-  text-align: center;
+.onomatopoeia {
+  &-image {
+    background-color: #000;
+    margin-top: -40px;
+    padding-top: 40px;
+  }
+
+  &-title {
+    background-color: #ff0;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0.3em 0.5em;
+  }
+
+  &-heading {
+     background-image: linear-gradient(-45deg, #ccc 25%, #eee 25%, #eee 50%, #ccc 50%, #ccc 75%, #eee 75%, #eee);
+    background-size: 5px 5px;
+    background-repeat: repeat;
+    border-bottom: solid 2px #333;
+    padding: 4px 8px;
+  }
 }

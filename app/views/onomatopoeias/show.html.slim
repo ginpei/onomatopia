@@ -1,27 +1,31 @@
 p#notice
   = notice
 
-h1.onomatopoeia-title
-  = @onomatopoeia.name
+div.onomatopoeia-image
+  - unless @onomatopoeia.top_illustration.nil?
+    = render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration }
+  - else
+    ' (No images.)
 
-- unless @onomatopoeia.top_illustration.nil?
-  = render partial: 'illustrations/show', locals: { illustration: @onomatopoeia.top_illustration }
-- else
-  ' (No images.)
-
-h2 解説
-
+h1.onomatopoeia-title = @onomatopoeia.name
 - if @onomatopoeia.top_explanation.nil?
   p (No data.)
 - else
   p = @onomatopoeia.top_explanation.outline
   = md @onomatopoeia.top_explanation.description
 
-h2 同義語
-
+h2.onomatopoeia-heading = t 'onomatopoeia.synonyms'
 ul
   li
     strong = @onomatopoeia.name
   - @onomatopoeia.synonyms.each do |synonym|
     - unless synonym.name == @onomatopoeia.name
       li = synonym.name
+
+h2.onomatopoeia-heading = t 'onomatopoeia.usage'
+p
+  ' (No data.)
+
+h2.onomatopoeia-heading = t 'onomatopoeia.example_sound'
+p
+  ' (No data.)

@@ -17,3 +17,8 @@ ja:
         staf_page: スタッフのページ
         opinion_form: ご意見フォーム
         opinion_form_description: ご意見、ご感想、掲載希望オノマトペなどありましたら、ご協力くださいませ。
+
+  onomatopoeia:
+    synonyms: 類義語
+    usage: 使われ方
+    example_sound: 参考音源
