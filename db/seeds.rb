@@ -15,21 +15,25 @@ def seed_image(name)
   end
 end
 
+def build(seeds)
+  seeds.each do |category_name, onomatopoeias|
+    category = Category.create(name: category_name)
+    onomatopoeias.each do |data|
+      onomatopoeia = category.onomatopoeias.create
+      data['synonyms'].each{ |name| onomatopoeia.synonyms.create(name: name)}
+      data['description'].each{ |text| onomatopoeia.explanations.create(description: text)}
+
+      image = seed_image(data['synonyms'].first.upcase)
+      if image
+        illustration = onomatopoeia.illustrations.create(image: image)
+      end
+
+      onomatopoeia.update(top_synonym_id: onomatopoeia.synonyms.first.id)
+    end
+  end
+end
+
 locale = 'en'
 yml = File.read("#{Rails.root}/db/seeds/#{locale}.yml")
 seeds = YAML.load(yml)
-seeds.each do |category_name, onomatopoeias|
-  category = Category.create(name: category_name)
-  onomatopoeias.each do |data|
-    onomatopoeia = category.onomatopoeias.create
-    data['synonyms'].each{ |name| onomatopoeia.synonyms.create(name: name)}
-    data['description'].each{ |text| onomatopoeia.explanations.create(description: text)}
-
-    image = seed_image(data['synonyms'].first.upcase)
-    if image
-      illustration = onomatopoeia.illustrations.create(image: image)
-    end
-
-    onomatopoeia.update(top_synonym_id: onomatopoeia.synonyms.first.id)
-  end
-end
+build(seeds)
