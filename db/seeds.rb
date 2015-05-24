@@ -15,25 +15,26 @@ def seed_image(name)
   end
 end
 
-def build(locale, seeds)
+['en'].each do |locale|
+  # load data
+  yml = File.read("#{Rails.root}/db/seeds/#{locale}.yml")
+  seeds = YAML.load(yml)
   seeds.each do |category_name, onomatopoeias|
+    # category
     category = Category.create(name: category_name)
+
     onomatopoeias.each do |data|
+      # onomatopoeia
       onomatopoeia = category.onomatopoeias.create
+
+      # texts
       data['synonyms'].each{ |name| onomatopoeia.synonyms.create(locale: locale, name: name)}
       data['description'].each{ |text| onomatopoeia.explanations.create(locale: locale, description: text)}
-
-      image = seed_image(data['synonyms'].first.upcase)
-      if image
-        illustration = onomatopoeia.illustrations.create(locale: locale, image: image)
-      end
-
       onomatopoeia.update(top_synonym_id: onomatopoeia.synonyms.first.id)
+
+      # illustration
+      image = seed_image(data['synonyms'].first.upcase)
+      onomatopoeia.illustrations.create(locale: locale, image: image) unless image.nil?
     end
   end
 end
-
-locale = 'en'
-yml = File.read("#{Rails.root}/db/seeds/#{locale}.yml")
-seeds = YAML.load(yml)
-build(locale, seeds)
