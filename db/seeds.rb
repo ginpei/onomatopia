@@ -21,11 +21,22 @@ end
   seeds = YAML.load(yml)
   seeds.each do |category_name, onomatopoeias|
     # category
-    category = Category.create(name: category_name)
+    category = Category.find_by_name(category_name)
+    unless category
+      category = Category.create(name: category_name)
+    end
 
-    onomatopoeias.each do |data|
+    onomatopoeias.each do |key_name, data|
       # onomatopoeia
-      onomatopoeia = category.onomatopoeias.create
+      key_synonym = Synonym.find_by_name(key_name.upcase)
+      if key_synonym
+        onomatopoeia = key_synonym.onomatopoeia
+      else
+        onomatopoeia = category.onomatopoeias.create
+        if category.onomatopoeia.nil?
+          category.update(onomatopoeia: onomatopoeia)
+        end
+      end
 
       # texts
       data['synonyms'].each{ |name| onomatopoeia.synonyms.create(locale: locale, name: name)}

@@ -1,71 +1,71 @@
 explosion:
-  -
+  kaboom:
     synonyms:
       - kaboom
       - boom
     description:
       - Something is explosed.
-  -
+  bomb:
     synonyms:
       - bomb
     description:
       - Something is bombed.
 
 living:
-  -
+  nom_nom:
     synonyms:
       - nom nom
     description:
       - Wow, fuckin' ummy!
 
 animal:
-  -
+  woof:
     synonyms:
       - woof
     description:
       - I am a dog! I am a wolf! I am!
 
 action:
-  -
+  flap:
     synonyms:
       - flap
     description:
       - Flap-flap, walking, Batako-san.
 
 atomoshphere:
-  -
+  applause:
     synonyms:
       - applause
     description:
       - Yatta-
 
 looks:
-  -
+  blink:
     synonyms:
       - blink
     description:
       - Blinking blinking little stare. (wow)
 
 object:
-  -
+  thump:
     synonyms:
       - thump
     description:
       - Sitting down. "What!? From a standing position! Such jumping power in his knees alone!"
       - Low beat.
-  -
+  crash:
     synonyms:
       - crash
     description:
       - My heart is broken.
 
 emotion:
-  -
+  cheer:
     synonyms:
       - cheer
     description: 
       - Happy&hearts;
-  -
+  sob:
     synonyms:
       - sob
     description: 
