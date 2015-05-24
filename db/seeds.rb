@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def seed_image(name)
-  path = File.join(Rails.root, "/db/seed_images/#{name}.png")
+  path = File.join(Rails.root, "/db/seeds/images/#{name}.png")
   if File.exist? path
     File.open(path)
   else
