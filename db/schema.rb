@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522203543) do
+ActiveRecord::Schema.define(version: 20150524162614) do
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",         null: false
+    t.string   "name",            null: false
     t.integer  "onomatopoeia_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "categories", ["onomatopoeia_id"], name: "index_categories_on_onomatopoeia_id"
@@ -26,17 +26,19 @@ ActiveRecord::Schema.define(version: 20150522203543) do
     t.integer  "onomatopoeia_id"
     t.string   "outline"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "locale",          default: "en", null: false
   end
 
   add_index "explanations", ["onomatopoeia_id"], name: "index_explanations_on_onomatopoeia_id"
 
   create_table "illustrations", force: :cascade do |t|
     t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "onomatopoeia_id", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "onomatopoeia_id",                null: false
+    t.string   "locale",          default: "en", null: false
   end
 
   create_table "onomatopoeia", force: :cascade do |t|
@@ -47,10 +49,11 @@ ActiveRecord::Schema.define(version: 20150522203543) do
   end
 
   create_table "synonyms", force: :cascade do |t|
-    t.integer  "onomatopoeia_id", null: false
-    t.string   "name",         null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "onomatopoeia_id",                null: false
+    t.string   "name",                           null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "locale",          default: "en", null: false
   end
 
   add_index "synonyms", ["onomatopoeia_id"], name: "index_synonyms_on_onomatopoeia_id"
