@@ -15,17 +15,17 @@ def seed_image(name)
   end
 end
 
-def build(seeds)
+def build(locale, seeds)
   seeds.each do |category_name, onomatopoeias|
     category = Category.create(name: category_name)
     onomatopoeias.each do |data|
       onomatopoeia = category.onomatopoeias.create
-      data['synonyms'].each{ |name| onomatopoeia.synonyms.create(name: name)}
-      data['description'].each{ |text| onomatopoeia.explanations.create(description: text)}
+      data['synonyms'].each{ |name| onomatopoeia.synonyms.create(locale: locale, name: name)}
+      data['description'].each{ |text| onomatopoeia.explanations.create(locale: locale, description: text)}
 
       image = seed_image(data['synonyms'].first.upcase)
       if image
-        illustration = onomatopoeia.illustrations.create(image: image)
+        illustration = onomatopoeia.illustrations.create(locale: locale, image: image)
       end
 
       onomatopoeia.update(top_synonym_id: onomatopoeia.synonyms.first.id)
@@ -36,4 +36,4 @@ end
 locale = 'en'
 yml = File.read("#{Rails.root}/db/seeds/#{locale}.yml")
 seeds = YAML.load(yml)
-build(seeds)
+build(locale, seeds)
