@@ -15,7 +15,7 @@ def seed_image(name)
   end
 end
 
-['en'].each do |locale|
+['en', 'ja'].each do |locale|
   # load data
   yml = File.read("#{Rails.root}/db/seeds/#{locale}.yml")
   seeds = YAML.load(yml)

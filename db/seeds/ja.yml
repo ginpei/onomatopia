@@ -1,0 +1,71 @@
+explosion:
+  kaboom:
+    synonyms:
+      - ドカーン
+    description:
+      - 何か爆発したぞ。
+  bomb:
+    synonyms:
+      - ドーン
+    description:
+      - 何か爆発したかも？
+
+living:
+  nom_nom:
+    synonyms:
+      - もぐもぐ
+    description:
+      - うめーうめー
+
+animal:
+  woof:
+    synonyms:
+      - わん
+    description:
+      - オレはやるぜオレはやるぜ
+
+action:
+  flap:
+    synonyms:
+      - パタパタ
+    description:
+      - アンパンマン、新しい顔と戸籍よ！
+
+atomoshphere:
+  applause:
+    synonyms:
+      - ぱぁー
+    description:
+      - ヤッター
+
+looks:
+  blink:
+    synonyms:
+      - チカッ
+    description:
+      - ききらら
+
+object:
+  thump:
+    synonyms:
+      - ドン
+    description:
+      - なっ！？ 座ったままの姿勢！ 膝だけであんな跳躍を、何者！？
+      - 低音ドンツク
+  crash:
+    synonyms:
+      - がしゃーん
+    description:
+      - また来世～！
+
+emotion:
+  cheer:
+    synonyms:
+      - パァー
+    description: 
+      - ハッピーうれピーよろピくねー
+  sob:
+    synonyms:
+      - しくしく
+    description: 
+      - 泣いてねーよ！
