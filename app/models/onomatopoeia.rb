@@ -22,7 +22,7 @@ class Onomatopoeia < ActiveRecord::Base
   end
 
   def top_synonym
-    Synonym.find(top_synonym_id)
+    synonyms.where(main: true).first
   end
 
   def top_illustration
