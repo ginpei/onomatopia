@@ -5,7 +5,7 @@ class OnomatopoeiasController < ApplicationController
   # GET /onomatopoeias
   # GET /onomatopoeias.json
   def index
-    @onomatopoeias = Onomatopoeia.all
+    @onomatopoeias = Onomatopoeia.all.each{|o| o.locale=current_locale }
   end
 
   # GET /onomatopoeias/1
@@ -17,6 +17,7 @@ class OnomatopoeiasController < ApplicationController
   # GET /onomatopoeias/new
   def new
     @onomatopoeia = Onomatopoeia.new
+    @onomatopoeia.locale = current_locale
   end
 
   # GET /onomatopoeias/1/edit
@@ -27,6 +28,7 @@ class OnomatopoeiasController < ApplicationController
   # POST /onomatopoeias.json
   def create
     @onomatopoeia = Onomatopoeia.new(onomatopoeia_params)
+    @onomatopoeia.locale = current_locale
 
     respond_to do |format|
       if @onomatopoeia.save
@@ -67,6 +69,7 @@ class OnomatopoeiasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_onomatopoeia
       @onomatopoeia = Onomatopoeia.find_by_name(params[:name])
+      @onomatopoeia.locale = current_locale
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

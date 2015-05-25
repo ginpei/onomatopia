@@ -41,7 +41,7 @@ end
       # texts
       data['synonyms'].each{ |name| onomatopoeia.synonyms.create(locale: locale, name: name)}
       data['description'].each{ |text| onomatopoeia.explanations.create(locale: locale, description: text)}
-      onomatopoeia.synonyms.first.update(main: true) unless onomatopoeia.top_synonym
+      onomatopoeia.synonyms.where(locale:locale).first.update(main: true)
 
       # illustration
       image = seed_image(data['synonyms'].first.upcase)

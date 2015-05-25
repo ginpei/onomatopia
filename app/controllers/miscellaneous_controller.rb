@@ -41,6 +41,7 @@ class MiscellaneousController < ApplicationController
   private
     def get_top_onomatopoeias_list_item(span, name)
       onomatopoeia = Onomatopoeia.find_by_name(name)
+      onomatopoeia.locale = current_locale
       illustration = onomatopoeia.illustrations.first
       { span: span, onomatopoeia: onomatopoeia, illustration: illustration }
     end

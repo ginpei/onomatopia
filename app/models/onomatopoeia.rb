@@ -4,6 +4,9 @@ class Onomatopoeia < ActiveRecord::Base
   has_many :explanations
   has_many :synonyms
 
+  attr_accessor :locale
+  after_initialize :set_default_locale
+
   def self.find_by_name(name)
     synonym = Synonym.find_by_name(name)
     if synonym
@@ -22,7 +25,7 @@ class Onomatopoeia < ActiveRecord::Base
   end
 
   def top_synonym
-    synonyms.where(main: true).first
+    synonyms.where({main: true, locale: @locale}).first
   end
 
   def top_illustration
@@ -30,7 +33,7 @@ class Onomatopoeia < ActiveRecord::Base
   end
 
   def top_explanation
-    explanations.first
+    explanations.where({locale: @locale}).first
   end
 
   def name
@@ -40,4 +43,9 @@ class Onomatopoeia < ActiveRecord::Base
   def to_param
     name
   end
+
+  private
+    def set_default_locale
+      @locale = I18n.default_locale
+    end
 end
