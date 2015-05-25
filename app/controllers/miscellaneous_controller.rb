@@ -15,8 +15,6 @@ class MiscellaneousController < ApplicationController
     @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'SOB'))
     @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'CRASH'))
     @top_onomatopoeias.push(get_top_onomatopoeias_list_item(3, 'WOOF'))
-
-    @onomatopoeias = Onomatopoeia.all
   end
 
   def search
