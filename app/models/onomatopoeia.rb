@@ -45,7 +45,7 @@ class Onomatopoeia < ActiveRecord::Base
   end
 
   def to_param
-    name
+    keyphrase
   end
 
   private

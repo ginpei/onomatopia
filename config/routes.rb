@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   post 'change_locale' => 'miscellaneous#change_locale', as: :change_locale
   get 'search', to: 'miscellaneous#search'
-  resources :onomatopoeias, param: :name
+  resources :onomatopoeias, param: :keyphrase
 
   root 'miscellaneous#home'
 

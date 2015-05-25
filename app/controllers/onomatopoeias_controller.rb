@@ -68,7 +68,7 @@ class OnomatopoeiasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_onomatopoeia
-      @onomatopoeia = Onomatopoeia.find_by_name(params[:name])
+      @onomatopoeia = Onomatopoeia.find_by_keyphrase(params[:keyphrase])
       @onomatopoeia.locale = current_locale
     end
 
