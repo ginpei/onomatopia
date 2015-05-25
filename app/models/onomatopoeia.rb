@@ -7,6 +7,10 @@ class Onomatopoeia < ActiveRecord::Base
   attr_accessor :locale
   after_initialize :set_default_locale
 
+  def keyphrase=(s)
+    write_attribute(:keyphrase, s.upcase)
+  end
+
   def self.find_by_name(name)
     synonym = Synonym.find_by_name(name)
     if synonym

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525171805) do
+ActiveRecord::Schema.define(version: 20150525212228) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",            null: false
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(version: 20150525171805) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
+    t.string   "keyphrase"
   end
+
+  add_index "onomatopoeias", ["keyphrase"], name: "index_onomatopoeias_on_keyphrase"
 
   create_table "synonyms", force: :cascade do |t|
     t.integer  "onomatopoeia_id", null: false

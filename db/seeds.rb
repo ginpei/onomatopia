@@ -26,13 +26,11 @@ end
       category = Category.create(name: category_name)
     end
 
-    onomatopoeias.each do |key_name, data|
+    onomatopoeias.each do |keyphrase, data|
       # onomatopoeia
-      key_synonym = Synonym.find_by_name(key_name.upcase)
-      if key_synonym
-        onomatopoeia = key_synonym.onomatopoeia
-      else
-        onomatopoeia = category.onomatopoeias.create
+      onomatopoeia = Onomatopoeia.find_by_keyphrase(keyphrase.upcase)
+      unless onomatopoeia
+        onomatopoeia = category.onomatopoeias.create(keyphrase: keyphrase)
         if category.onomatopoeia.nil?
           category.update(onomatopoeia: onomatopoeia)
         end
