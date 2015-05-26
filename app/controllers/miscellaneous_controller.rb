@@ -1,4 +1,6 @@
 class MiscellaneousController < ApplicationController
+  helper_method :translation_type?
+
   def with_global_header
     false
   end
@@ -34,8 +36,29 @@ class MiscellaneousController < ApplicationController
     end
 
     session[:locale] = locale
+    session[:translation_type] = nil
 
     redirect_to request.referrer
+  end
+
+  def change_translation_type
+    language = params[:language]
+    if language.presence_in ['jaen', 'enja']
+      session[:translation_type] = language
+    end
+    redirect_to request.referrer
+  end
+
+  def translation_type?(type)
+    current_type = session[:translation_type]
+    unless current_type
+      if current_locale == 'en'
+        current_type = session[:translation_type] = 'enja'
+      elsif current_locale == 'ja'
+        current_type = session[:translation_type] = 'jaen'
+      end
+    end
+    type == current_type
   end
 
   private

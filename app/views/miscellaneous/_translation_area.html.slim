@@ -1,8 +1,12 @@
 .translationArea
-  form.translationArea-form action="#"
-    button.translationArea-form-item name="type" value="jaen" disabled="disabled"
-      ' #{t 'g.lang.ja'}→#{t 'g.lang.en'}
-    button.translationArea-form-item name="type" value="enja"
+  = form_tag change_translation_type_path, method: 'post', class: 'translationArea-form'
+    - if @current_locale == 'ja'
+      button.translationArea-form-item name="language" value="jaen" disabled=(translation_type? 'jaen')
+        ' #{t 'g.lang.ja'}→#{t 'g.lang.en'}
+    button.translationArea-form-item name="language" value="enja" disabled=(translation_type? 'enja')
       ' #{t 'g.lang.en'}→#{t 'g.lang.ja'}
+    - unless @current_locale == 'ja'
+      button.translationArea-form-item name="language" value="jaen" disabled=(translation_type? 'jaen')
+        ' #{t 'g.lang.ja'}→#{t 'g.lang.en'}
 
   = yield

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :categories
 
   post 'change_locale' => 'miscellaneous#change_locale', as: :change_locale
+  post 'change_translation_type' => 'miscellaneous#change_translation_type', as: :change_translation_type
   get 'search', to: 'miscellaneous#search'
   resources :onomatopoeias, param: :keyphrase
 
