@@ -1,3 +1,5 @@
-= form_tag search_path, method: 'get'
-  input type="search" placeholder="KABOOM" name="keyword" value="#{ if defined?(keyword) then keyword else '' end }"
-  = submit_tag 'Search', name: ''
+= form_tag search_path, method: 'get', class: 'searchForm'
+  input.searchForm-item.searchForm-item-left.searchForm-item-input(
+    type="search" placeholder="KABOOM" name="keyword"
+    value="#{ if defined?(keyword) then keyword else '' end }")
+  = submit_tag '&#128269;'.html_safe, name: '', class: 'searchForm-item searchForm-item-right'

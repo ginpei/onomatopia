@@ -156,3 +156,29 @@
     }
   }
 }
+
+.searchForm {
+  margin: 1em;
+  text-align: center;
+
+  &-item {
+    border: 1px #999;
+    border-style: solid none solid solid;
+    box-sizing: border-box;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1em;
+    vertical-align: top;
+
+    &-input {
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.2) inset;
+    }
+    &-left {
+      border-radius: 1em 0 0 1em;
+    }
+    &-right {
+      border-radius: 0 1em 1em 0;
+      border-style: solid;
+    }
+  }
+}
