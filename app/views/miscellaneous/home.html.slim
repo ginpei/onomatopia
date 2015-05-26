@@ -11,7 +11,8 @@ header.home-header
       a class="home-nav-item home-nav-item-col#{data[:span]}" style="background-image: url('#{data[:illustration].image_url}')" href="#{onomatopoeia_path data[:onomatopoeia]}"
 
   section class="home-allCategories"
-    h1 class="home-allCategories-title" All Categories
+    h1 class="home-allCategories-title"
+      = t 'home.all_categories'
     nav class="home-allCategories-list"
       - @categories.each do |category|
         a class="home-allCategories-item" href="#{category_path category}"
